@@ -1,0 +1,28 @@
+@font-face {
+    font-family: 'icon25';
+    src: url('fonts/icon25.eot?-8skjq8');
+    src: url('fonts/icon25.eot?#iefix-8skjq8') format('embedded-opentype'), url('fonts/icon25.woff?-8skjq8') format('woff'), url('fonts/icon25.ttf?-8skjq8') format('truetype'), url('fonts/icon25.svg?-8skjq8#icon25') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+.icon {
+    font-family: 'icon25';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.icon-closeThin:before {
+    content: "\e600";
+}
+.icon-arrowthin-e:before {
+    content: "\e601";
+}
+.icon-arrowthin-w:before {
+    content: "\e602";
+}

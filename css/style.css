@@ -1,0 +1,142 @@
+body {
+    font-family: sans-serif;
+    background: #384047;
+}
+h1 {
+    color: #fff;
+    text-align: center
+}
+ul {
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+    display: block;
+    max-width: 780px;
+    text-align: center;
+}
+ul li {
+    display: inline-block;
+    padding: 8px;
+    background: white;
+    margin: 10px;
+}
+ul li img {
+    display: block;
+}
+a {
+    text-decoration: none;
+}
+/** Start Coding Here **/
+
+#overlay {
+    position: absolute;
+    display: none;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.70);
+}
+/***** Tree House Overlay *****/
+
+#overlay img {
+    display: block;
+    margin: 0 auto;
+    margin-top: 10%;
+    border: 25px solid #eeeeff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.85);
+}
+#overlay p {
+    text-align: center;
+    color: #ffffff;
+    text-shadow: 0 5px 10px rgba(0, 0, 0, 0.85);
+}
+/**** Stew's widget ****/
+
+.gallery {
+    transition: all 255ms ease;
+}
+.blurred {
+    -webkit-filter: blur(3px);
+    -moz-filter: blur(3px);
+    -o-filter: blur(3px);
+    -ms-filter: blur(3px);
+    filter: blur(3px);
+    transition: all 255ms ease;
+    z-index: 0;
+    position: relative;
+}
+.img-widget {
+    position: absolute;
+    display: none;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.70);
+    z-index: 120;
+}
+.widget-inner {
+    position: relative;
+    display: block;
+    width: 400px;
+    margin: 0 auto;
+    margin-top: 10%;
+    padding: 40px;
+    color: #676767;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.85);
+    font-size: 18px;
+    font-weight: lighter;
+    text-align: center;
+    background: #eef;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.85);
+}
+/* Widget "Next" Button */
+
+.next-btn,
+.prev-btn {
+    position: absolute;
+    color: rgba(255, 255, 255, 0.15);
+    font-size: 64px;
+    text-shadow: none;
+    top: 50%;
+    transition: all 250ms ease;
+}
+.next-btn:hover,
+.prev-btn:hover {
+    color: rgba(255, 255, 255, 1);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 25);
+    transition: all 250ms ease;
+}
+.next-btn {
+    right: -124px;
+}
+.prev-btn {
+    left: -124px;
+}
+/* Widget Close Button */
+
+.close-btn {
+    position: absolute;
+    display: block;
+    top: -30px;
+    right: -30px;
+    font-size: 24px;
+    height: 24px;
+    width: 24px;
+    text-shadow: none;
+    color: #ffffff;
+    transition: all 250ms ease;
+}
+.close-btn:hover {
+    color: red;
+    font-size: 32px;
+    height: 32px;
+    width: 32px;
+    top: -40px;
+    right: -40px;
+    text-shadow: 0 0 10px rgba(255, 0, 0, 1);
+    transition: all 250ms ease;
+}
