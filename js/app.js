@@ -69,6 +69,7 @@ var $prevBtn = $imgWidget.find(".prev-btn");
 var $closeBtn = $imgWidget.find(".close-btn");
 
 
+
 // ==== Generate the Widget on the Page ====//
 $('body').append($imgWidget);
 
@@ -83,6 +84,9 @@ $imgGalleryLinks.click(function (event) {
     // Blur the background
     $gallery.addClass("blurred");
 
+    // add "selected" class
+    $(this).parent().addClass("selected");
+
     // make the image src
     var imgLocal = $(this).attr("href");
 
@@ -92,9 +96,6 @@ $imgGalleryLinks.click(function (event) {
     var captionText = $(this).children("img").attr("alt");
     $caption.text(captionText);
 
-    // Console log
-    console.log(imgLocal);
-    console.log(captionText);
 
 
     $imgWidget.fadeIn("fast");
@@ -104,10 +105,57 @@ $imgGalleryLinks.click(function (event) {
 
 // ==== Advance Next & Back ====//
 
+// To advance the IMG I need to get the img's SRC
+// I need to get the next img's SRC & Replace the current img's src with that.
+// I need to get the next img's alt tag and replace the current caption with that
+
+// Next Button
+$nextBtn.click(function (event) {
+    event.preventDefault();
+
+    var $selected = $(".selected");
+
+    // Update Image
+    var nextLink = $selected.next().children("a").attr('href');
+    $image.attr("src", nextLink);
+
+    //Update caption
+    var nextCaption = $selected.next().children("a").children("img").attr('alt');
+
+    $caption.text(nextCaption);
+
+    //Update selected li
+    $selected.removeClass("selected").next().addClass("selected");
+
+});
+
+// Previous Button
+$prevBtn.click(function (event) {
+    event.preventDefault();
+
+    var $selected = $(".selected");
+
+    // Update the Image
+
+    var prevLink = $selected.prev().children("a").attr("href");
+
+    $image.attr("src", prevLink);
+
+    // Update the caption
+    var prevCaption = $selected.prev().children("a").children("img").attr('alt');
+
+    $caption.text(prevCaption);
+
+    // Update the selected li
+    $selected.removeClass("selected").prev().addClass("selected");
+
+});
+
+
 // ==== Hide the Widget ====//
 $closeBtn.click(function (event) {
     event.preventDefault();
-    console.log("CLOSE");
+    $imgGalleryLinks.removeClass("selected");
     $imgWidget.fadeOut("fast");
     $gallery.removeClass("blurred");
 });

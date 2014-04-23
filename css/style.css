@@ -19,6 +19,12 @@ ul li {
     padding: 8px;
     background: white;
     margin: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    transition: all 250ms ease;
+}
+ul li:hover {
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.8);
+    transition: all 250ms ease;
 }
 ul li img {
     display: block;
